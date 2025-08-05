@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Bot, Send, Loader2, User, X, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose, SheetFooter } from './ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetClose, SheetFooter, SheetDescription, SheetTrigger } from './ui/sheet';
 import { Input } from './ui/input';
 import { ScrollArea } from './ui/scroll-area';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
@@ -100,6 +100,7 @@ export default function Chatbot() {
             <Sparkles className="h-6 w-6 text-accent" />
             Tendani Assistant
           </SheetTitle>
+          <SheetDescription>A chatbot to help you with Tendani Holdings services.</SheetDescription>
            <SheetClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary" />
         </SheetHeader>
         <ScrollArea className="flex-1 p-4" ref={scrollAreaRef}>

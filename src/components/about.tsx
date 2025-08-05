@@ -22,7 +22,7 @@ export default function About() {
               alt="Tendani Holdings team working together"
               width={600}
               height={400}
-              className="rounded-lg shadow-xl"
+              className="rounded-lg shadow-xl w-full h-auto"
               data-ai-hint="diverse team smiling"
             />
           </div>

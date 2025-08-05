@@ -51,7 +51,7 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/images&videos/gallery/tendanilogo-Photoroom.png" alt="Tendani Holdings Logo" width={80} height={80} className="h-20 w-auto" />
+            <Image src="/images&videos/gallery/tendanilogo-Photoroom.png" alt="Tendani Holdings Logo" width={80} height={80} className="h-20" style={{ width: 'auto' }} />
             <span className="text-xl font-bold font-headline text-foreground">
               Tendani Holdings
             </span>
@@ -82,7 +82,7 @@ export default function Header() {
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                 <SheetHeader>
                   <SheetTitle className="font-headline text-2xl flex items-center gap-2">
-                    <Image src="/images&videos/gallery/tendanilogo-Photoroom.png" alt="Tendani Holdings Logo" width={70} height={70} className="h-16 w-auto" />
+                    <Image src="/images&videos/gallery/tendanilogo-Photoroom.png" alt="Tendani Holdings Logo" width={70} height={70} className="h-16" style={{ width: 'auto' }} />
                     Tendani Holdings
                   </SheetTitle>
                 </SheetHeader>
