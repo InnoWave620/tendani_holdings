@@ -16,13 +16,13 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 sm:py-32 bg-background">
+    <section id="services" className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-headline text-primary tracking-tighter">
+          <h2 className="text-3xl sm:text-4xl font-bold font-headline text-primary tracking-tighter">
             What We Offer
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground">
             Tailored services designed to meet your specific needs with precision and care.
           </p>
         </div>
@@ -31,12 +31,12 @@ export default function Services() {
             <Card key={index} className="text-center shadow-lg hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
               <CardHeader className="items-center">
                 <div className="p-4 bg-primary/10 rounded-full mb-4">
-                  <service.icon className="w-10 h-10 text-primary" />
+                  <service.icon className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
                 </div>
-                <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
+                <CardTitle className="font-headline text-xl sm:text-2xl">{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base text-muted-foreground">{service.description}</CardDescription>
+                <CardDescription className="text-sm sm:text-base text-muted-foreground">{service.description}</CardDescription>
               </CardContent>
             </Card>
           ))}

@@ -11,19 +11,19 @@ const galleryItems = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-20 sm:py-32 bg-card">
+    <section id="gallery" className="py-16 sm:py-24 bg-card">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-headline text-primary tracking-tighter">
+          <h2 className="text-3xl sm:text-4xl font-bold font-headline text-primary tracking-tighter">
             Our Work
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground">
             A glimpse into the quality and dedication we bring to every project.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {galleryItems.map((item, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg">
+            <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg aspect-w-1 aspect-h-1">
               <Image
                 src={item.src}
                 alt={item.alt}

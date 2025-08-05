@@ -34,13 +34,13 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 sm:py-32 bg-background">
+    <section id="testimonials" className="py-16 sm:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-headline text-primary tracking-tighter">
+          <h2 className="text-3xl sm:text-4xl font-bold font-headline text-primary tracking-tighter">
             Happy Clients
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground">
             Hear what our customers have to say about their experience with us.
           </p>
         </div>
@@ -49,11 +49,11 @@ export default function Testimonials() {
             align: 'start',
             loop: true,
           }}
-          className="w-full max-w-4xl mx-auto"
+          className="w-full max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto"
         >
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
+              <CarouselItem key={index} className="md:basis-1/2">
                 <div className="p-1">
                   <Card className="h-full flex flex-col justify-between shadow-md">
                     <CardContent className="p-6 flex-grow">
@@ -72,7 +72,7 @@ export default function Testimonials() {
                           <Star key={i} className="h-5 w-5 text-accent fill-accent" />
                         ))}
                       </div>
-                      <blockquote className="text-muted-foreground italic">
+                      <blockquote className="text-muted-foreground italic text-sm sm:text-base">
                         "{testimonial.quote}"
                       </blockquote>
                     </CardContent>
