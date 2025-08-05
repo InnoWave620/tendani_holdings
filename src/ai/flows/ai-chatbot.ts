@@ -9,6 +9,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import {groq} from 'genkitx-groq';
 
 const AIChatbotInputSchema = z.object({
   message: z.string().describe('The user message to the chatbot.'),
@@ -52,7 +53,7 @@ const prompt = ai.definePrompt({
 
   Conversation History:
   {{#each conversationHistory}}
-  {{#if (eq role \"user\")}}
+  {{#if (eq role "user")}}
   User: {{{content}}}
   {{else}}
   Bot: {{{content}}}
@@ -68,6 +69,7 @@ const aiChatbotFlow = ai.defineFlow(
     name: 'aiChatbotFlow',
     inputSchema: AIChatbotInputSchema,
     outputSchema: AIChatbotOutputSchema,
+    model: groq('llama3-70b-8192'),
   },
   async input => {
     const {output} = await prompt(input);

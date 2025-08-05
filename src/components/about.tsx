@@ -18,7 +18,7 @@ export default function About() {
           </div>
           <div className="mt-8 md:mt-0">
             <Image
-              src="/images&videos/gallery/ourwork6.jpg"
+              src="/images&videos/gallery/ourmission.jpg"
               alt="Tendani Holdings team working together"
               width={600}
               height={400}
