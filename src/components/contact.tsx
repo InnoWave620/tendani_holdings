@@ -73,7 +73,7 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel>Email Address</FormLabel>
                       <FormControl>
-                        <Input placeholder="you@example.com" {...field} />
+                        <Input placeholder="tendanitradings@gmail.com" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -106,29 +106,31 @@ export default function Contact() {
                 </div>
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6 text-primary" />
-                  <span>(123) 456-7890</span>
+                  <span>+27644836405</span>
                 </div>
                 <div className="flex items-start gap-4">
                   <MapPin className="h-6 w-6 text-primary mt-1" />
-                  <span>123 Green Way, Garden City, FL 12345</span>
+                  <span>443 Phola street,Dullstroom sakhelwe</span>
                 </div>
               </div>
             </div>
             <div>
               <h3 className="text-2xl font-headline font-semibold mb-4">Business Hours</h3>
-              <p className="text-muted-foreground">Mon - Fri: 8:00 AM - 6:00 PM</p>
+              <p className="text-muted-foreground">Mon - Fri: 8:00 AM - 5:00 PM</p>
               <p className="text-muted-foreground">Sat: 9:00 AM - 4:00 PM</p>
               <p className="text-muted-foreground">Sun: Closed</p>
             </div>
             <div className="rounded-lg overflow-hidden shadow-xl">
-               <Image
-                src="https://placehold.co/600x400.png"
-                width={600}
-                height={400}
-                alt="Map showing company location"
-                className="w-full h-full object-cover"
-                data-ai-hint="city map"
-              />
+              <iframe
+                src="https://maps.google.com/maps?q=443%20Phola%20street,Dullstroom%20sakhelwe&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Company Location"
+              ></iframe>
             </div>
           </div>
         </div>
