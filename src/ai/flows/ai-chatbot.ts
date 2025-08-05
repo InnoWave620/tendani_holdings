@@ -40,7 +40,12 @@ const prompt = ai.definePrompt({
   name: 'aiChatbotPrompt',
   input: {schema: AIChatbotInputSchema},
   output: {schema: AIChatbotOutputSchema},
-  model: groq.Model.Llama38b,
+  model: groq.Model['deepseek-r1-distill-llama-70b'],
+  config: {
+    temperature: 0.6,
+    maxOutputTokens: 4096,
+    topP: 0.95,
+  },
   prompt: `You are a helpful AI chatbot for Tendani Holdings, a cleaning and gardening company. Your goal is to answer user questions about the company and its services, recommend relevant services, and guide users through the website.
 
   Here are some FAQs and information about Tendani Holdings:
@@ -69,7 +74,7 @@ const prompt = ai.definePrompt({
   {{/each}}
 
   User Message: {{{message}}}
-  Chatbot:`, // Ensure Handlebars syntax is correct
+  Chatbot:`,
 });
 
 const aiChatbotFlow = ai.defineFlow(
