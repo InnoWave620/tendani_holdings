@@ -1,19 +1,17 @@
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative h-screen min-h-[700px] flex items-center justify-center text-center text-white">
-      <Image
-        src="https://placehold.co/1920x1080.png"
-        alt="A well-maintained garden and a clean home exterior"
-        layout="fill"
-        objectFit="cover"
-        className="absolute inset-0 z-0 brightness-50"
-        priority
-        data-ai-hint="lush garden clean home"
+    <section id="home" className="relative h-screen min-h-[700px] flex items-center justify-center text-center text-white overflow-hidden">
+      <video
+        src="/cleaning.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute z-0 w-auto min-w-full min-h-full max-w-none brightness-50 object-cover"
       />
       <div className="relative z-10 p-4 sm:p-6 lg:p-8 flex flex-col items-center">
         <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight drop-shadow-lg">
