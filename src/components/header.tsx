@@ -25,20 +25,16 @@ const navLinks = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', handleScroll);
-      // Initial check
-      handleScroll();
-      return () => window.removeEventListener('scroll', handleScroll);
-    }
+    
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check on mount
+    
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleLinkClick = () => {
@@ -48,7 +44,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isClient && isScrolled ? 'bg-card/80 backdrop-blur-sm shadow-md' : 'bg-transparent'
+        isScrolled ? 'bg-card/80 backdrop-blur-sm shadow-md' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
