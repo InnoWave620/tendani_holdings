@@ -1,5 +1,3 @@
-'use client';
-
 import { Leaf, Twitter, Facebook, Instagram } from 'lucide-react';
 import Link from 'next/link';
 
