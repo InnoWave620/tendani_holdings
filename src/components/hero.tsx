@@ -11,7 +11,7 @@ export default function Hero() {
         loop
         muted
         playsInline
-        className="absolute z-0 w-auto min-w-full min-h-full max-w-none brightness-50 object-cover"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 brightness-50"
       />
       <div className="relative z-10 p-4 sm:p-6 lg:p-8 flex flex-col items-center">
         <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight drop-shadow-lg">
