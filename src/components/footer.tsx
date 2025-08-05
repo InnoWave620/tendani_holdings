@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 export default function Footer() {
-  const [currentYear, setCurrentYear] = useState<number | null>(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
+    setIsClient(true);
   }, []);
 
   return (
@@ -20,7 +20,7 @@ export default function Footer() {
             <span className="text-lg font-bold font-headline">Tendani Holdings</span>
           </div>
           <p className="text-sm text-muted-foreground">
-            &copy; {currentYear || new Date().getFullYear()} Tendani Holdings. All rights reserved.
+            &copy; {isClient ? new Date().getFullYear() : ''} Tendani Holdings. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link href="#" className="text-muted-foreground hover:text-primary">
