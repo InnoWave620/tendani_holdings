@@ -12,10 +12,15 @@ import {z} from 'genkit';
 
 const AIChatbotInputSchema = z.object({
   message: z.string().describe('The user message to the chatbot.'),
-  conversationHistory: z.array(z.object({
-    role: z.enum(['user', 'bot']),
-    content: z.string(),
-  })).optional().describe('The conversation history between the user and the bot.'),
+  conversationHistory: z
+    .array(
+      z.object({
+        role: z.enum(['user', 'bot']),
+        content: z.string(),
+      })
+    )
+    .optional()
+    .describe('The conversation history between the user and the bot.'),
 });
 export type AIChatbotInput = z.infer<typeof AIChatbotInputSchema>;
 
@@ -24,7 +29,9 @@ const AIChatbotOutputSchema = z.object({
 });
 export type AIChatbotOutput = z.infer<typeof AIChatbotOutputSchema>;
 
-export async function aiChatbot(input: AIChatbotInput): Promise<AIChatbotOutput> {
+export async function aiChatbot(
+  input: AIChatbotInput
+): Promise<AIChatbotOutput> {
   return aiChatbotFlow(input);
 }
 
@@ -69,7 +76,7 @@ const aiChatbotFlow = ai.defineFlow(
     inputSchema: AIChatbotInputSchema,
     outputSchema: AIChatbotOutputSchema,
   },
-  async input => {
+  async (input) => {
     const {output} = await prompt(input);
     if (!output) {
       return {response: "I'm sorry, I couldn't generate a response."};
