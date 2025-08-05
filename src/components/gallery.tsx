@@ -1,12 +1,13 @@
 import Image from 'next/image';
 
 const galleryItems = [
-  { src: "https://placehold.co/600x400.png", alt: "A sparkling clean kitchen after our service", hint: "clean kitchen" },
-  { src: "https://placehold.co/600x400.png", alt: "A beautifully manicured lawn", hint: "manicured lawn" },
-  { src: "https://placehold.co/600x400.png", alt: "A pristine and sanitized bathroom", hint: "sparkling bathroom" },
-  { src: "https://placehold.co/600x400.png", alt: "A tidy and organized office space", hint: "tidy office" },
-  { src: "https://placehold.co/600x400.png", alt: "A vibrant flowerbed in full bloom", hint: "vibrant flowerbed" },
-  { src: "https://placehold.co/600x400.png", alt: "Perfectly trimmed hedges lining a walkway", hint: "trimmed hedges" },
+  { src: "/images&videos/ourmission.jpg", alt: "A mission to provide exceptional cleaning and gardening services", hint: "team working" },
+  { src: "/images&videos/gallery/ourwork6.jpg", alt: "A beautifully manicured lawn", hint: "manicured lawn" },
+  { src: "/images&videos/gallery/ourwork5.jpg", alt: "A pristine and sanitized bathroom", hint: "sparkling bathroom" },
+  { src: "/images&videos/gallery/ourwork4.jpg", alt: "A tidy and organized office space", hint: "tidy office" },
+  { src: "/images&videos/gallery/ourwork3.jpg", alt: "A vibrant flowerbed in full bloom", hint: "vibrant flowerbed" },
+  { src: "/images&videos/gallery/ourwork1.jpg", alt: "Perfectly trimmed hedges lining a walkway", hint: "trimmed hedges" },
+  { src: "/images&videos/gallery/ourwork2.jpg", alt: "A sparkling clean kitchen after our service", hint: "clean kitchen" },
 ];
 
 export default function Gallery() {

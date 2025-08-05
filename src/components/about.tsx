@@ -18,7 +18,7 @@ export default function About() {
           </div>
           <div className="wow animate__animated animate__fadeInRight">
             <Image
-              src="https://placehold.co/600x400.png"
+              src="/images&videos/ourmission.jpg"
               alt="Tendani Holdings team working together"
               width={600}
               height={400}
