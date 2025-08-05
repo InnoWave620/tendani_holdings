@@ -1,8 +1,9 @@
 
 'use client';
 
-import { Leaf, Menu, Sparkles, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Button } from './ui/button';
 import {
@@ -46,7 +47,7 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-2">
-            <Leaf className="h-8 w-8 text-primary" />
+            <Image src="/images&videos/gallery/tendanilogo-Photoroom.png" alt="Tendani Holdings Logo" width={40} height={40} className="h-10 w-auto" />
             <span className="text-xl font-bold font-headline text-foreground">
               Tendani Holdings
             </span>
@@ -77,7 +78,7 @@ export default function Header() {
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                 <SheetHeader>
                   <SheetTitle className="font-headline text-2xl flex items-center gap-2">
-                    <Leaf className="h-7 w-7 text-primary" />
+                    <Image src="/images&videos/gallery/tendanilogo-Photoroom.png" alt="Tendani Holdings Logo" width={32} height={32} className="h-8 w-auto" />
                     Tendani Holdings
                   </SheetTitle>
                 </SheetHeader>

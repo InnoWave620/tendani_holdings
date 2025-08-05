@@ -1,5 +1,6 @@
-import { Leaf, Twitter, Facebook, Instagram } from 'lucide-react';
+import { Twitter, Facebook, Instagram } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,7 +10,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center gap-2 mb-4 md:mb-0">
-            <Leaf className="h-7 w-7 text-primary" />
+            <Image src="/images&videos/gallery/tendanilogo-Photoroom.png" alt="Tendani Holdings Logo" width={32} height={32} className="h-8 w-auto" />
             <span className="text-lg font-bold font-headline">Tendani Holdings</span>
           </div>
           <p className="text-sm text-muted-foreground">
