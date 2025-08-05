@@ -1,7 +1,16 @@
+'use client';
+
 import { Leaf, Twitter, Facebook, Instagram } from 'lucide-react';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function Footer() {
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="bg-card border-t">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -11,7 +20,7 @@ export default function Footer() {
             <span className="text-lg font-bold font-headline">Tendani Holdings</span>
           </div>
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Tendani Holdings. All rights reserved.
+            &copy; {currentYear} Tendani Holdings. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link href="#" className="text-muted-foreground hover:text-primary">
