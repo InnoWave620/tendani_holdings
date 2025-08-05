@@ -32,10 +32,13 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
-    // Initial check
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll);
+      // Initial check
+      handleScroll();
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
   }, []);
 
   const handleLinkClick = () => {
