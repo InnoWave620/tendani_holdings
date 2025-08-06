@@ -7,7 +7,7 @@ const pricingPlans = [
   {
     icon: BedDouble,
     title: "Complete Changeover",
-    price: "R800",
+    price: "Starting from R800",
     description: "Includes a full cleaning service with linen washing and ironing.",
     features: ["Full property cleaning", "Linen washed and ironed", "Ideal for turnovers"],
     buttonText: "Book Now",
@@ -15,7 +15,7 @@ const pricingPlans = [
   {
     icon: Zap,
     title: "Quick Service",
-    price: "R300",
+    price: "Starting from R300",
     description: "A quick but thorough cleaning for a tidy-up.",
     features: ["Surface cleaning", "Quick declutter", "Perfect for a refresh"],
     buttonText: "Book Now",
@@ -23,7 +23,7 @@ const pricingPlans = [
   {
     icon: Leaf,
     title: "Gardening",
-    price: "R350",
+    price: "Starting from R350",
     description: "Per day rate for our professional gardening services.",
     features: ["Lawn mowing & edging", "Weeding & maintenance", "General garden care"],
     buttonText: "Book Now",
