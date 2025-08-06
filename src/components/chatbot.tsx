@@ -10,7 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { cn } from '@/lib/utils';
 import type { AIChatbotInput, AIChatbotOutput } from '@/ai/flows/ai-chatbot';
 
-type Message = {
+type Message = { 
   role: 'user' | 'bot';
   content: string;
 };
