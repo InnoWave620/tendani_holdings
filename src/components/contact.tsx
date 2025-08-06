@@ -27,13 +27,32 @@ export default function Contact() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We will get back to you shortly.",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const response = await fetch('https://formspree.io/f/mgvznqqn', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for contacting us. We will get back to you shortly.",
+        });
+        form.reset();
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem with your request. Please try again.",
+      });
+    }
   }
 
   return (
@@ -91,7 +110,9 @@ export default function Contact() {
                     </FormItem>
                   )}
                 />
-                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" size="lg">Send Message</Button>
+                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" size="lg" disabled={form.formState.isSubmitting}>
+                  {form.formState.isSubmitting ? 'Sending...' : 'Send Message'}
+                </Button>
               </form>
             </Form>
           </div>
