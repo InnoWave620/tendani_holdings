@@ -52,23 +52,22 @@ const getInitialMessages = (apiKeyValid: boolean | null): Message[] => {
 
 const Chatbot: React.FC = () => {
   const [apiKeyValid, setApiKeyValid] = useState<boolean | null>(null);
-  const [messages, setMessages] = useState<Message[]>(
-    getInitialMessages(null)
-  );
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [open, setOpen] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const initialMessagesRef = useRef<Message[]>(getInitialMessages(null));
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    if (
-      initialMessagesRef.current.length === 1 &&
-      initialMessagesRef.current[0].sender === 'bot'
-    ) {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (isMounted) {
       setMessages(getInitialMessages(apiKeyValid));
     }
-  }, [apiKeyValid]);
+  }, [apiKeyValid, isMounted]);
 
   useEffect(() => {
     if (open && messagesEndRef.current) {
@@ -96,8 +95,10 @@ const Chatbot: React.FC = () => {
         setApiKeyValid(false);
       }
     };
-    checkApiKeyValidity();
-  }, []);
+    if(isMounted) {
+      checkApiKeyValidity();
+    }
+  }, [isMounted]);
 
   const handleSend = async () => {
     if (!input.trim()) return;
@@ -170,6 +171,10 @@ const Chatbot: React.FC = () => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') handleSend();
   };
+  
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <>

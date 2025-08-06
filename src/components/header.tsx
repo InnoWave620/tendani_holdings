@@ -30,12 +30,9 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    
-    // Set initial state after mount
-    handleScroll();
-
     window.addEventListener('scroll', handleScroll);
-    
+    // Set initial state
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
