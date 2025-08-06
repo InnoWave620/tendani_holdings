@@ -12,7 +12,7 @@ export default function Hero() {
         loop
         muted
         playsInline
-        className="absolute top-1/2 left-1/2 w-auto min-w-full min-h-full max-w-none -translate-x-1/2 -translate-y-1/2 z-0"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
       />
       <div className="relative z-20 p-4 sm:p-6 lg:p-8 flex flex-col items-center">
         <h1 className="font-headline text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight drop-shadow-lg">
