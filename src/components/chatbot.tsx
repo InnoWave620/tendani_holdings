@@ -56,7 +56,7 @@ const Chatbot: React.FC = () => {
   const [input, setInput] = useState('');
   const [open, setOpen] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messageRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -70,8 +70,11 @@ const Chatbot: React.FC = () => {
   }, [apiKeyValid, isMounted]);
 
   useEffect(() => {
-    if (open && messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (open && messageRefs.current.length > 0) {
+      const lastMessage = messageRefs.current[messageRefs.current.length - 1];
+      if (lastMessage) {
+        lastMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   }, [messages, open]);
 
@@ -207,6 +210,7 @@ const Chatbot: React.FC = () => {
               {messages.map((msg, idx) => (
                 <div
                   key={idx}
+                  ref={(el) => (messageRefs.current[idx] = el)}
                   className={`mb-2 flex ${
                     msg.sender === 'user' ? 'justify-end' : 'justify-start'
                   }`}
@@ -232,7 +236,6 @@ const Chatbot: React.FC = () => {
                   </div>
                 </div>
               )}
-              <div ref={messagesEndRef} />
             </div>
             <div className="p-2 border-t border-border flex gap-2 bg-card w-full"
      style={{ minHeight: '56px', boxSizing: 'border-box' }}>
