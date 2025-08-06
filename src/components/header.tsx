@@ -17,6 +17,7 @@ import {
 const navLinks = [
   { href: '#about', label: 'About' },
   { href: '#services', label: 'Services' },
+  { href: '#pricing', label: 'Pricing' },
   { href: '#gallery', label: 'Gallery' },
   { href: '#testimonials', label: 'Testimonials' },
   { href: '#contact', label: 'Contact' },
@@ -25,13 +26,14 @@ const navLinks = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
-    // Set initial state
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -39,12 +41,15 @@ export default function Header() {
   const handleLinkClick = () => {
     setIsMobileMenuOpen(false);
   };
+  
+  const headerClasses = isMounted && isScrolled
+  ? 'bg-card/80 backdrop-blur-sm shadow-md'
+  : 'bg-transparent';
+
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-card/80 backdrop-blur-sm shadow-md' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerClasses}`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
